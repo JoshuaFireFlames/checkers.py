@@ -1,10 +1,9 @@
 from graphics import*
 
-#Window size
-winX = 800
-winY = 800
-check = True
+sqSz = 50
 
-#Create window
-wind = GraphWin("Checkers", winX, winY)
-wind.setCoords(0, 0, winX, winY)
+chWin = GraphWin("Checkers", sqSz *10 ,sqSz *10)
+chWin.setcoords(0, 0, sqSz*10 , sqSz *10)
+
+chWin.getmouse()
+chWin.close()
