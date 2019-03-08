@@ -1,3 +1,5 @@
+#Checkers by JoshGara
+
 from graphics import*
 
 def draw_sq(sX, sY,size, color , win):
@@ -6,13 +8,18 @@ def draw_sq(sX, sY,size, color , win):
     square.draw(win)
 
 sqSz = 50
+sqCol = "red"
 
 chWin = GraphWin("Checkers", sqSz *10 ,sqSz *10)
 chWin.setCoords(0, 0, sqSz * 10 , sqSz *10)
 
 for j in range (8):
     for i in range (8):
-        draw_sq(sqSz * (i +1) , sqSz * (j + 1), sqSz, "red", chWin)
+        if (i + j) % 2 == 0:
+            sqCol = "black"
+        else:
+            sqCol = "red"
+        draw_sq(sqSz * (i +1) , sqSz * (j + 1), sqSz, sqCol, chWin)
 
 chWin.getmouse()
 chWin.close()
